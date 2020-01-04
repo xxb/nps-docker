@@ -1,17 +1,12 @@
-FROM ffdfgdfg/nps
+FROM ffdfgdfg/nps:0.25.1
 
 MAINTAINER docker <docker@gmail.com>
-ARG Frp_ver=0.30.0
-ENV DASHBOARD_PWD password
-ENV TOKEN 12345678
-ENV ALLOW_PORTS 10000-10020
-ENV MAX_POOL_COUNT 10
-ENV SUBDOMAIN_HOST frps.com
-ENV FRP_PORT 443
-ENV V_HTTP_PORT 80
-ENV V_HTTPS_PORT 443
+
+ENV WEB_PASSWORD password
+ENV PUBLIC_VKEY 12345678
 ENV TZ=Asia/Shanghai
 
-COPY nps.conf /conf/nps.conf
-
+ADD nps.conf /conf/nps.conf
+ADD server.key /conf/server.key
+ADD server.pem /conf/server.pem
 CMD ["/nps"]
