@@ -12,7 +12,6 @@ ENV V_HTTP_PORT 80
 ENV V_HTTPS_PORT 443
 ENV TZ=Asia/Shanghai
 
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+COPY nps.conf /conf/nps.conf
 
-ENTRYPOINT ["/entrypoint.sh"]
+CMD ["/nps"]
