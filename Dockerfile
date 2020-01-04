@@ -1,4 +1,4 @@
-FROM ffdfgdfg/nps:0.25.1
+FROM ffdfgdfg/nps:0.25.3
 
 MAINTAINER docker <docker@gmail.com>
 
