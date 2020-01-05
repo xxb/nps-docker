@@ -90,14 +90,14 @@ crypt=true
 compress=true
 
 [web-admin]
-host=$DOMAIN
+mode=http
+host=admin.$DOMAIN
 target_addr=127.0.0.1:8080
-location=/admin
 
 [web-file]
-host=$DOMAIN
+mode=http
+host=file.$DOMAIN
 target_addr=127.0.0.1:8081
-location=/file
 
 [file]
 mode=file
