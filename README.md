@@ -2,4 +2,4 @@
 
 
 
-    docker run -d --name nps --net=host -e DOMAIN=nps.youdomain.com -v :/conf lihaixin/nps-docker:0.25.3
+    docker run -d --name nps --net=host -e DOMAIN=nps.youdomain.com lihaixin/nps-docker:0.25.3
