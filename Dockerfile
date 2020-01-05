@@ -3,6 +3,7 @@ MAINTAINER docker <docker@gmail.com>
 
 ENV WEB_PASSWORD password
 ENV PUBLIC_VKEY 12345678
+ENV DOMAIN nps.youdomain.com
 ENV TZ=Asia/Shanghai
 
 WORKDIR /
