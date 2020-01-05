@@ -9,8 +9,8 @@ runmode = dev
 
 #HTTP(S) proxy port, no startup if empty
 http_proxy_ip=0.0.0.0
-http_proxy_port=80
-https_proxy_port=443
+http_proxy_port=$HTTP_PROXY_PORT
+https_proxy_port=$HTTPS_PROXY_PORT
 https_just_proxy=true
 #default https certificate setting
 https_default_cert_file=conf/server.pem
@@ -18,7 +18,7 @@ https_default_key_file=conf/server.key
 
 ##bridge
 bridge_type=tcp
-bridge_port=8024
+bridge_port=$BRIDGE_PORT
 bridge_ip=0.0.0.0
 
 # Public password, which clients can use to connect to the server
@@ -82,7 +82,7 @@ TEMPEOF
 
 cat > /conf/npc.conf<< TEMPEOF
 [common]
-server_addr=127.0.0.1:8024
+server_addr=127.0.0.1:$BRIDGE_PORT
 conn_type=tcp
 vkey=$PUBLIC_VKEY
 auto_reconnection=true
