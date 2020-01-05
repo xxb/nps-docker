@@ -80,4 +80,27 @@ http_cache_length=100
 
 TEMPEOF
 
-/nps
+cat > /conf/npc.conf<< TEMPEOF
+[common]
+server_addr=127.0.0.1:8024
+conn_type=tcp
+vkey=$PUBLIC_VKEY
+auto_reconnection=true
+max_conn=1000
+flow_limit=1000
+rate_limit=1000
+basic_username=11
+basic_password=3
+web_username=user
+web_password=1234
+crypt=true
+compress=true
+
+[web]
+host=admin.$DOMAIN
+target_addr=127.0.0.1:8080
+
+TEMPEOF
+
+/nps &
+/npc
