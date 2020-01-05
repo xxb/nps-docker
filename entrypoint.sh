@@ -90,17 +90,19 @@ crypt=true
 compress=true
 
 [web-admin]
-host=admin.$DOMAIN
+host=$DOMAIN
 target_addr=127.0.0.1:8080
+location=/admin
 
 [web-file]
-host=file.$DOMAIN
+host=$DOMAIN
 target_addr=127.0.0.1:8081
+location=/file
 
 [file]
 mode=file
 server_port=8081
-local_path=/tmp/
+local_path=/file/
 strip_pre=/
 
 TEMPEOF
