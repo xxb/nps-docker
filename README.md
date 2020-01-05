@@ -2,4 +2,4 @@
 
 
     git clone https://github.com/cnlh/nps.git
-    docker run -d --name nps --net=host -v /root/nps/conf/:/conf lihaixin/nps-docker:0.25.3
+    docker run -d --name nps --net=host -v :/conf lihaixin/nps-docker:0.25.3
