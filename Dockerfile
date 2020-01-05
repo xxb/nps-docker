@@ -6,5 +6,9 @@ ENV WEB_PASSWORD password
 ENV PUBLIC_VKEY 12345678
 ENV TZ=Asia/Shanghai
 
-copy conf /conf
-CMD ["/nps"]
+COPY conf /conf
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
+# CMD ["/nps"]
