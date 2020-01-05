@@ -2,7 +2,7 @@
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 
-cat >> /etc/config.json<< TEMPEOF
+cat >> /conf/nps.conf<< TEMPEOF
 appname = nps
 #Boot mode(dev|pro)
 runmode = dev
@@ -23,7 +23,7 @@ bridge_ip=0.0.0.0
 
 # Public password, which clients can use to connect to the server
 # After the connection, the server will be able to open relevant ports and parse related domain names according to its own configuration file.
-public_vkey=123
+public_vkey=$PUBLIC_VKEY
 
 #Traffic data persistence interval(minute)
 #Ignorance means no persistence
@@ -43,7 +43,7 @@ log_level=7
 #web
 web_host=a.o.com
 web_username=admin
-web_password=123
+web_password=$WEB_PASSWORD
 web_port = 8080
 web_ip=0.0.0.0
 web_base_url=
