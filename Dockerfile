@@ -1,13 +1,26 @@
-FROM ffdfgdfg/nps:0.25.3
-
+FROM alpine:3.8
 MAINTAINER docker <docker@gmail.com>
 
 ENV WEB_PASSWORD password
 ENV PUBLIC_VKEY 12345678
 ENV TZ=Asia/Shanghai
 
-COPY conf /conf
+WORKDIR /
+ENV NPS_VERSION 0.25.3
+
+RUN set -x && \
+	wget --no-check-certificate https://github.com/cnlh/nps/releases/download/v${NPS_VERSION}/linux_amd64_server.tar.gz && \ 
+	tar xzf linux_amd64_server.tar.gz && \
+  wget --no-check-certificate https://github.com/cnlh/nps/releases/download/v${NPS_VERSION}/linux_amd64_client.tar.gz && \
+  tar xzf linux_amd64_client.tar.gz && \
+	rm -rf *.tar.gz
+  
+VOLUME /conf
+
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
+
+
+
