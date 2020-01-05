@@ -6,4 +6,11 @@
 
 一键部署nps-docker：
 
-    docker run -d --name nps --net=host -e DOMAIN=nps.youdomain.com lihaixin/nps-docker:0.25.3
+    docker run -d --name nps --net=host \
+        -e HTTP_PROXY_PORT=80 \
+        -e HTTPS_PROXY_PORT=443 \
+        -e BRIDGE_PORT=8024 \
+        -e DOMAIN=nps.youdomain.com -e PUBLIC_VKEY=12345678 -e WEB_PASSWORD=!password lihaixin/nps-docker:0.25.3
+        
+     
+    通过变量直接修改域名，公钥KEY，网页管理密码，以及必须的端口
