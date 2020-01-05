@@ -86,19 +86,22 @@ server_addr=127.0.0.1:8024
 conn_type=tcp
 vkey=$PUBLIC_VKEY
 auto_reconnection=true
-max_conn=1000
-flow_limit=1000
-rate_limit=1000
-basic_username=11
-basic_password=3
-web_username=user
-web_password=1234
 crypt=true
 compress=true
 
-[web]
+[web-admin]
 host=admin.$DOMAIN
 target_addr=127.0.0.1:8080
+
+[web-file]
+host=file.$DOMAIN
+target_addr=127.0.0.1:8081
+
+[file]
+mode=file
+server_port=8081
+local_path=/tmp/
+strip_pre=/
 
 TEMPEOF
 
