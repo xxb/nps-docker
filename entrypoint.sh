@@ -27,7 +27,7 @@ public_vkey=$PUBLIC_VKEY
 
 #Traffic data persistence interval(minute)
 #Ignorance means no persistence
-#flow_store_interval=1
+flow_store_interval=1
 
 # log level LevelEmergency->0  LevelAlert->1 LevelCritical->2 LevelError->3 LevelWarning->4 LevelNotice->5 LevelInformational->6 LevelDebug->7
 log_level=7
@@ -47,7 +47,7 @@ web_password=$WEB_PASSWORD
 web_port = 8080
 web_ip=0.0.0.0
 web_base_url=
-web_open_ssl=false
+web_open_ssl=true
 web_cert_file=conf/server.pem
 web_key_file=conf/server.key
 # if web under proxy use sub path. like http://host/nps need this.
@@ -60,22 +60,22 @@ auth_crypt_key =1234567812345678
 #allow_ports=9001-9009,10001,11000-12000
 
 #Web management multi-user login
-allow_user_login=false
+allow_user_login=true
 allow_user_register=false
 allow_user_change_username=false
 
 
 #extension
-allow_flow_limit=false
-allow_rate_limit=false
-allow_tunnel_num_limit=false
-allow_local_proxy=false
-allow_connection_num_limit=false
+allow_flow_limit=true
+allow_rate_limit=true
+allow_tunnel_num_limit=true
+allow_local_proxy=true
+allow_connection_num_limit=true
 allow_multi_ip=false
-system_info_display=false
+system_info_display=true
 
 #cache
-http_cache=false
+http_cache=true
 http_cache_length=100
 
 TEMPEOF
@@ -90,7 +90,7 @@ crypt=true
 compress=true
 
 [web-admin]
-mode=http
+mode=https
 host=admin.$DOMAIN
 target_addr=127.0.0.1:8080
 
