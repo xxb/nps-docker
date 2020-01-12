@@ -14,3 +14,6 @@
         
      
     通过变量直接修改域名，公共密钥KEY，网页管理密码，http、https域名解析端口和客户端链接服务器的端口
+    
+    管理地址：https://admin.nps.youdomain.com  
+    客户端下载地址：http://file.nps.youdomain.com
