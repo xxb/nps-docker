@@ -10,7 +10,7 @@
         -e HTTP_PROXY_PORT=80 \
         -e HTTPS_PROXY_PORT=443 \
         -e BRIDGE_PORT=8024 \
-        -e DOMAIN=nps.youdomain.com -e PUBLIC_VKEY=12345678 -e WEB_PASSWORD=password lihaixin/nps-docker:0.25.3
+        -e DOMAIN=nps.youdomain.com -e PUBLIC_VKEY=12345678 -e WEB_PASSWORD=password lihaixin/nps
         
      
     通过变量直接修改域名，公共密钥KEY，网页管理密码，http、https域名解析端口和客户端链接服务器的端口
