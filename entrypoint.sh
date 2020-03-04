@@ -61,7 +61,7 @@ auth_crypt_key =1234567812345678
 
 #Web management multi-user login
 allow_user_login=true
-allow_user_register=true
+allow_user_register=false
 allow_user_change_username=false
 
 
