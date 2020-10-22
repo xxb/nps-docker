@@ -10,7 +10,7 @@ ENV DOMAIN nps.youdomain.com
 ENV TZ=Asia/Shanghai
 
 WORKDIR /
-ENV NPS_VERSION 0.26.7
+ENV NPS_VERSION 0.26.9
 
 RUN set -x && \
         apk add -U tzdata && \
