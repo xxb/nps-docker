@@ -88,6 +88,7 @@ vkey=$PUBLIC_VKEY
 auto_reconnection=true
 crypt=true
 compress=true
+remark=nps
 
 [web-admin]
 mode=https
