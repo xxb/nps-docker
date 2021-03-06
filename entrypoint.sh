@@ -41,7 +41,7 @@ log_level=7
 #p2p_port=6000
 
 #web
-web_host=a.o.com
+web_host=admin.$DOMAIN
 web_username=admin
 web_password=$WEB_PASSWORD
 web_port = 8080
