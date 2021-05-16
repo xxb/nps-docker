@@ -11,6 +11,7 @@ ENV HTTP_PROXY_PORT 80
 ENV HTTPS_PROXY_PORT 443
 ENV DOMAIN nps.youdomain.com
 ENV TZ=Asia/Shanghai
+LABEL name=nps
 
 
 WORKDIR /
