@@ -57,7 +57,7 @@ web_key_file=/conf/server.key
 auth_key=test
 auth_crypt_key =1234567812345678
 
-#allow_ports=9001-9009,10001,11000-12000
+allow_ports=9001-9009,10001,11000-12000
 
 #Web management multi-user login
 allow_user_login=true
