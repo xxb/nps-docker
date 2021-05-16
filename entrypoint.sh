@@ -86,26 +86,12 @@ server_addr=127.0.0.1:$BRIDGE_PORT
 conn_type=tcp
 vkey=$PUBLIC_VKEY
 auto_reconnection=true
-crypt=true
-compress=true
 remark=nps
 
 [web-admin]
 mode=https
 host=admin.$DOMAIN
 target_addr=127.0.0.1:8080
-
-[web-file]
-mode=http
-host=file.$DOMAIN
-target_addr=127.0.0.1:8081
-
-[file]
-mode=file
-server_port=8081
-local_path=/file/
-strip_pre=/
-
 TEMPEOF
 
 install_cert() {
