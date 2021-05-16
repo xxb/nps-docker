@@ -24,7 +24,7 @@ RUN set -x && \
 	wget --no-check-certificate https://github.com/cnlh/nps/releases/download/v${NPS_VERSION}/windows_386_client.tar.gz -O /file/windows_386_client.tar.gz && \
 	wget --no-check-certificate https://github.com/cnlh/nps/releases/download/v${NPS_VERSION}/linux_amd64_client.tar.gz
   
-VOLUME /conf
+#VOLUME /conf
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
