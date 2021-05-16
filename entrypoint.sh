@@ -129,4 +129,5 @@ fi
 
 
 /nps &
+sleep 3
 /npc
