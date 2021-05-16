@@ -17,7 +17,7 @@ https_default_cert_file=/conf/server.crt
 https_default_key_file=/conf/server.key
 
 ##bridge
-bridge_type=tcp
+bridge_type=$MODE
 bridge_port=$BRIDGE_PORT
 bridge_ip=0.0.0.0
 
@@ -57,7 +57,7 @@ web_key_file=/conf/server.key
 auth_key=test
 auth_crypt_key =1234567812345678
 
-allow_ports=9001-9009,10001,11000-12000
+allow_ports=$ALLOW_POSTS
 
 #Web management multi-user login
 allow_user_login=true
@@ -83,7 +83,7 @@ TEMPEOF
 cat > /conf/npc.conf<< TEMPEOF
 [common]
 server_addr=127.0.0.1:$BRIDGE_PORT
-conn_type=tcp
+conn_type=$MODE
 vkey=$PUBLIC_VKEY
 auto_reconnection=true
 remark=nps
