@@ -13,7 +13,7 @@ http_proxy_port=$HTTP_PROXY_PORT
 https_proxy_port=$HTTPS_PROXY_PORT
 https_just_proxy=true
 #default https certificate setting
-https_default_cert_file=/conf/server.cert
+https_default_cert_file=/conf/server.crt
 https_default_key_file=/conf/server.key
 
 ##bridge
@@ -48,7 +48,7 @@ web_port = 8080
 web_ip=0.0.0.0
 web_base_url=
 web_open_ssl=true
-web_cert_file=/conf/server.cert
+web_cert_file=/conf/server.crt
 web_key_file=/conf/server.key
 # if web under proxy use sub path. like http://host/nps need this.
 #web_base_url=/nps
