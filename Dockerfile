@@ -21,7 +21,7 @@ RUN set -x && \
         tar xzf linux_amd64_client.tar.gz && \
 	rm -rf *.tar.gz
   
-
+VOLUME /conf
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
