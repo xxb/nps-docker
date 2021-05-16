@@ -19,13 +19,8 @@ RUN set -x && \
 	tar xzf linux_amd64_server.tar.gz && \
         wget --no-check-certificate https://github.com/cnlh/nps/releases/download/v${NPS_VERSION}/linux_amd64_client.tar.gz && \
         tar xzf linux_amd64_client.tar.gz && \
-	rm -rf *.tar.gz && \
-	mkdir /file && \
-	wget --no-check-certificate https://github.com/cnlh/nps/releases/download/v${NPS_VERSION}/windows_amd64_client.tar.gz -O /file/windows_amd64_client.tar.gz && \
-	wget --no-check-certificate https://github.com/cnlh/nps/releases/download/v${NPS_VERSION}/windows_386_client.tar.gz -O /file/windows_386_client.tar.gz && \
-	wget --no-check-certificate https://github.com/cnlh/nps/releases/download/v${NPS_VERSION}/linux_amd64_client.tar.gz
+	rm -rf *.tar.gz
   
-# VOLUME /conf
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
