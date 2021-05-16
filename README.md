@@ -19,7 +19,6 @@
 ### 服务器
     
     管理地址：https://admin.nps.youdomain.com  
-    客户端下载地址：http://file.nps.youdomain.com
     
     
 ### 客户端连接
