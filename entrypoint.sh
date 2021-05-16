@@ -108,5 +108,25 @@ strip_pre=/
 
 TEMPEOF
 
+install_cert() {
+mkdir -p /etc/cert/$DOMAIN
+openssl genrsa 1024 > /etc/cert/$DOMAIN/private.key
+openssl req -new -key /etc/cert/$DOMAIN/private.key -subj "/C=CN/ST=GD/L=SZ/O=Acme, Inc./CN=localhost" > /etc/cert/$DOMAIN/private.csr
+openssl req -x509 -days 3650 -key /etc/cert/$DOMAIN/private.key -in /etc/cert/$DOMAIN/private.csr > /etc/cert/$DOMAIN/fullchain.crt
+}
+
+# 查看证书，没有就自动创建
+if [ ! -f "/etc/cert/$DOMAIN/fullchain.crt" ]; then
+  install_cert
+fi
+
+if [ ! -f "/var/frp/conf/server.crt" ]; then
+  echo copy /etc/cert/$DOMAIN/fullchain.crt to /conf/server.crt
+  echo copy /etc/cert/$DOMAIN/private.key to /conf/server.key
+  cp /etc/cert/$DOMAIN/fullchain.crt /conf/server.crt
+  cp /etc/cert/$DOMAIN/private.key /conf/server.key
+fi
+
+
 /nps &
 /npc
