@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:3.12
 MAINTAINER docker <docker@gmail.com>
 
 ENV WEB_PASSWORD !password
@@ -13,7 +13,7 @@ ENV NPS_VERSION 0.26.10
 WORKDIR /
 
 RUN set -x && \
-        apk add -U tzdata && \
+        apk add -U tzdata ca-certificates openssl && \
 	wget --no-check-certificate https://github.com/cnlh/nps/releases/download/v${NPS_VERSION}/linux_amd64_server.tar.gz && \ 
 	tar xzf linux_amd64_server.tar.gz && \
         wget --no-check-certificate https://github.com/cnlh/nps/releases/download/v${NPS_VERSION}/linux_amd64_client.tar.gz && \
@@ -24,7 +24,7 @@ RUN set -x && \
 	wget --no-check-certificate https://github.com/cnlh/nps/releases/download/v${NPS_VERSION}/windows_386_client.tar.gz -O /file/windows_386_client.tar.gz && \
 	wget --no-check-certificate https://github.com/cnlh/nps/releases/download/v${NPS_VERSION}/linux_amd64_client.tar.gz
   
-VOLUME /conf
+# VOLUME /conf
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
