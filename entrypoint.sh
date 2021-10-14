@@ -44,10 +44,10 @@ log_level=7
 web_host=admin.$DOMAIN
 web_username=admin
 web_password=$WEB_PASSWORD
-web_port = 8080
+web_port = $WEB_PORT
 web_ip=0.0.0.0
 web_base_url=
-web_open_ssl=true
+web_open_ssl=$web_open_ssl
 web_cert_file=/conf/server.crt
 web_key_file=/conf/server.key
 # if web under proxy use sub path. like http://host/nps need this.
@@ -91,7 +91,7 @@ remark=nps
 [web-admin]
 mode=https
 host=admin.$DOMAIN
-target_addr=127.0.0.1:8080
+target_addr=127.0.0.1:$WEB_PORT
 TEMPEOF
 
 install_cert() {
